@@ -1,19 +1,25 @@
 .PostList {
+  margin: 0 auto;
+  padding: 20px 0;
+  width: 100%;
+  max-width: 576px;
+  min-width: 320px;
+  height: 80vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
   padding: 40px 0px;
-  width: var(--container, 576px);
+
   max-width: 576px;
   min-width: 320px;
-  height: 80vh;
-  border-radius: var(--c-radius, 16px);
-  border: 1px solid var(--c-border-color, #e5e5e5);
-  background: var(--white, #fff);
+  height: 100vh;
+  // border-radius: var(--c-radius, 16px);
+  // border: 1px solid var(--c-border-color, #e5e5e5);
+  // background: var(--white, #fff);
 
   .container {
+    position: relative;
     display: flex;
     padding: 0px 24px;
     flex-direction: column;
@@ -21,17 +27,17 @@
     gap: 24px;
     align-self: stretch;
     width: 100%;
-    height: auto;
+    height: 100%;
 
     .posts {
+      position: relative;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       gap: 24px;
       align-self: stretch;
       width: 100%;
-      height: auto;
-
+      height: 100%;
       .post {
         display: flex;
         padding: 0px 8px 24px 8px;
@@ -40,7 +46,7 @@
         gap: 16px;
         align-self: stretch;
         width: 100%;
-        height: auto;
+        height: 100%;
 
         border-bottom: 1px solid var(--grey-90, #e6e6e6);
 
@@ -143,38 +149,43 @@
           }
         }
       }
-    }
-
-    .editorBox {
-      // position: fixed;
-      // bottom: 40px;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      gap: 8px;
-      align-self: stretch;
-
-      .editorButton {
+      .editorBox {
+        padding-right: 50px;
         display: flex;
-        width: 120px;
-        height: var(--input-height, 56px);
-        padding: 0px 34px;
-        justify-content: center;
-        align-items: center;
-        border-radius: 6px;
-        background: var(--blue, #2d71f7);
+        justify-content: space-between;
+        position: fixed;
 
-        p {
+        width: 100%;
+        height: 80px;
+        max-width: 576px;
+        bottom: 0;
+        flex-direction: column;
+
+        align-items: flex-end;
+        gap: 8px;
+        background: white;
+        color: white;
+        .editorButton {
+          // position: fixed;
+          display: flex;
+          width: 120px;
+          height: var(--input-height, 56px);
+          padding: 0px 34px;
+          justify-content: center;
+          align-items: center;
+          border-radius: 6px;
+          background: var(--blue, #2d71f7);
+
           color: var(--white, #fff);
           text-align: center;
-          leading-trim: both;
-          text-edge: cap;
+          // leading-trim: both;
+          // text-edge: cap;
           font-feature-settings:
             'clig' off,
             'liga' off;
           /* Label */
           font-family: 'Pretendard-Regular';
-          font-size: 18px;
+          font-size: 15px;
           font-style: normal;
           font-weight: 800;
           line-height: normal;
