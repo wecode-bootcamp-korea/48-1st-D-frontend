@@ -13,9 +13,8 @@ const PostList = () => {
             <Post />
             <Post />
             <Post />
-            <div className="editorBox">
-              <EditorButton />
-            </div>
+
+            <EditorButton />
           </article>
         </div>
       </div>
@@ -75,7 +74,11 @@ const PostFooter = () => {
 };
 
 const EditorButton = () => {
-  return <button className="editorButton">글 쓰기</button>;
+  return (
+    <div className="editorBox">
+      <button className="editorButton">글 쓰기</button>;
+    </div>
+  );
 };
 
 export default PostList;
