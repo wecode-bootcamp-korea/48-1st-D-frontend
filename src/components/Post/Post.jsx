@@ -7,6 +7,7 @@ import './Post.scss';
 
 const Post = props => {
   const [contentToggle, setContentToggle] = useState(false);
+
   return (
     <div className="post">
       <PostHeader
@@ -19,8 +20,8 @@ const Post = props => {
         setContentToggle={setContentToggle}
       />
       <PostFooter
-        likeCount={props.postData.like}
-        commentCount={props.postData.comment.length}
+        likeCount={props.postData.likeCount}
+        commentCount={props.postData.comments}
       />
       {contentToggle && <CommentBox />}
     </div>

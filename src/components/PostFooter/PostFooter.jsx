@@ -29,7 +29,7 @@ const PostFooter = props => {
         <div className="likeText">좋아요</div>
         <div className="likeCount">{props.likeCount}</div>
         <div className="commentText">댓글</div>
-        <div className="commentCount">{props.commentCount}</div>
+        <div className="commentCount">{props.commentCount.length}</div>
       </div>
       <div className="likeButton">
         <HeartButton like={like} onClick={toggleLike} />

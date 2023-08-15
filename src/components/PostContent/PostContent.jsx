@@ -5,10 +5,7 @@ const PostContent = props => {
     props.setContentToggle(prev => !prev);
   };
   return (
-    <div
-      className="postContent"
-      onClick={!props.contentToggle ? onSubscribe : onSubscribe}
-    >
+    <div className="postContent" onClick={onSubscribe}>
       {props.content}
     </div>
   );

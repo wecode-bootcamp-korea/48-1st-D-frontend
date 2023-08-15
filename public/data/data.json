@@ -1,44 +1,101 @@
-[
-  {
-    "nickName": "한지선",
-    "content": "일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못 돌리는 사람들의경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고 믿는다. 이 현상은1966년 MIT 교수 조셉 웨이젠바움이 만든 챗봇인 ELIZA의 이름을 따서명명되었다. 일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못돌리는 사람들의 경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고믿는다. 이 현상은 1966년 MIT 교수웨이젠바움이 만든 챗봇인 ELIZA의이름을 따서 명명되었다.",
-    "comment": [
-      {
-        "전미혜": "정말 멋져요 킹왕짱짱걸!!",
-        "김슬기": "어떻게 그런 생각을....정말 대단해요",
-        "최우식": "사랑해"
-      }
-    ],
-    "like": 0,
-    "createdAt": "23.08.13",
-    "updatedAt": "23.08.15"
-  },
-  {
-    "nickName": "김슬기",
-    "content": "안뇽하세용💌❣💞💝💘👱‍♀️👩‍🦰👧👨‍🦱👩‍🦲.",
-    "comment": [
-      {
-        "최우식": "슬기님!! 최고!!",
-        "전미혜": "온더고 도시락 진짜 맛없지 않아요??ㅠㅠㅠ",
-        "한지선": "오늘도 화이팅!!!!"
-      }
-    ],
-    "like": 0,
-    "createdAt": "23.08.10",
-    "updatedAt": "23.08.13"
-  },
-  {
-    "nickName": "전미혜",
-    "content": "❤🧡🧡💛💚💙💜ELIZA의 이름을 따서명명되었다. 일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못돌리는 사람들의 경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고믿는다. 이 현상은 1966년 MIT 교수웨이젠바움이 만든 챗봇인 ELIZA의이름을 따서 명명되었다.",
-    "comment": [
-      {
-        "한지선": "미혜님! 공부좀 하세요!!",
-        "김슬기": "미혜님..진짜... 공부 안해요?",
-        "최우식": "이미지가 좋으셔서 그런데 혹시 DM확인 가능하세요?"
-      }
-    ],
-    "like": 0,
-    "createdAt": "23.07.27",
-    "updatedAt": "23.08.01"
-  }
-]
+{
+  "data": [
+    {
+      "id": 1,
+      "nickName": "한지선",
+      "isLike": false,
+      "likeCount": 0,
+      "content": "일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못 돌리는 사람들의경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고 믿는다. 이 현상은1966년 MIT 교수 조셉 웨이젠바움이 만든 챗봇인 ELIZA의 이름을 따서명명되었다. 일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못돌리는 사람들의 경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고믿는다. 이 현상은 1966년 MIT 교수웨이젠바움이 만든 챗봇인 ELIZA의이름을 따서 명명되었다.",
+      "comments": [
+        {
+          "commentId": 1,
+          "userName": "최우식",
+          "userProfile": "https://source.unsplash.com/random/?superstar",
+          "comment": "위코드 너무 재미있엉",
+          "createdAt": "2023-07-27T21:26:17Z"
+        },
+        {
+          "commentId": 2,
+          "userName": "yujin_star",
+          "userProfile": "https://source.unsplash.com/random/?papa",
+          "comment": "아~~~~~~~~~캠핑 가고 싶다!",
+          "createdAt": "2023-07-27T19:26:17Z"
+        },
+        {
+          "commentId": 3,
+          "userName": "algp1222",
+          "userProfile": "https://source.unsplash.com/random/?papa",
+          "comment": "공부하자공부하자",
+          "createdAt": "2023-07-27T19:26:17Z"
+        }
+      ],
+      "createdAt": "2023-07-27T19:26:17Z",
+      "updatedAt": "2023-07-27T19:26:17Z"
+    },
+
+    {
+      "id": 2,
+      "nickName": "김슬기",
+      "isLike": false,
+      "likeCount": 0,
+      "content": "안뇽하세용💌❣💞💝💘👱‍♀️👩‍🦰👧👨‍🦱👩‍🦲.",
+      "comments": [
+        {
+          "commentId": 1,
+          "userName": "loveyou<3",
+          "userProfile": "https://source.unsplash.com/random/?puppy",
+          "comment": "지금 먹고싶은 것 : 치킨, 초밥, 잡채밥",
+          "createdAt": "2023-07-27T21:26:17Z"
+        },
+        {
+          "commentId": 2,
+          "userName": "algp1205",
+          "userProfile": "https://source.unsplash.com/random/?boy",
+          "comment": "이미지가 너무 좋으신데 DM부탁드려도 될까요?",
+          "createdAt": "2023-07-27T19:26:17Z"
+        }
+      ],
+      "createdAt": "2023-07-26T19:26:17Z",
+      "updatedAt": "2023-07-26T19:26:17Z"
+    },
+    {
+      "id": 3,
+      "nickName": "전미혜",
+      "isLike": false,
+      "likeCount": 0,
+      "content": "❤🧡🧡💛💚💙💜ELIZA의 이름을 따서명명되었다. 일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못돌리는 사람들의 경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고믿는다. 이 현상은 1966년 MIT 교수웨이젠바움이 만든 챗봇인 ELIZA의이름을 따서 명명되었다.",
+      "comments": [
+        {
+          "commentId": 1,
+          "userName": "pliossun",
+          "userProfile": "https://source.unsplash.com/random/?men",
+          "comment": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ아 웃겨",
+          "createdAt": "2023-07-27T21:26:17Z"
+        },
+        {
+          "commentId": 2,
+          "userName": "wecode_founder",
+          "userProfile": "https://source.unsplash.com/random/?women",
+          "comment": "주말에 뭐먹징?????",
+          "createdAt": "2023-07-27T19:26:17Z"
+        },
+        {
+          "commentId": 3,
+          "userName": "pliossun",
+          "userProfile": "https://source.unsplash.com/random/?men",
+          "comment": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ아 웃겨",
+          "createdAt": "2023-07-27T21:26:17Z"
+        },
+        {
+          "commentId": 4,
+          "userName": "pliossun",
+          "userProfile": "https://source.unsplash.com/random/?men",
+          "comment": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ아 웃겨",
+          "createdAt": "2023-07-27T21:26:17Z"
+        }
+      ],
+      "createdAt": "2023-07-27T19:20:17Z",
+      "updatedAt": "2023-07-27T19:20:17Z"
+    }
+  ]
+}
