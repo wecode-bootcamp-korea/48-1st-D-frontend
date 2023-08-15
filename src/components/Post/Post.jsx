@@ -13,6 +13,7 @@ const Post = props => {
       <PostHeader
         nickName={props.postData.nickName}
         updatedAt={props.postData.updatedAt}
+        updataAt={props.postData.updataAt}
       />
       <PostContent
         content={props.postData.content}
