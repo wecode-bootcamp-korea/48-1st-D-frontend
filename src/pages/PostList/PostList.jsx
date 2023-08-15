@@ -18,7 +18,7 @@ const PostList = () => {
       .then(data => {
         setPostDataList(data.data);
         const sortedPosts = data.data.sort((a, b) => {
-          return new Date(b.updatedAt) - new Date(a.updatedAt);
+          return new Date(b.createdAt) - new Date(a.createdAt);
         });
 
         setPostDataList(sortedPosts);

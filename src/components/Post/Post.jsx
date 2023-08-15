@@ -24,7 +24,7 @@ const Post = props => {
         likeCount={props.postData.likeCount}
         commentCount={props.postData.comments}
       />
-      {contentToggle && <CommentBox />}
+      {contentToggle && <CommentBox comments={props.postData.comments} />}
     </div>
   );
 };
