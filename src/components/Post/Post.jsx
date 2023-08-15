@@ -7,18 +7,21 @@ import './Post.scss';
 
 const Post = props => {
   const [contentToggle, setContentToggle] = useState(false);
-  let nickName = props.postData.nickName;
-  let content = props.postData.content;
-  let updatedAt = props.postData.updatedAt;
   return (
     <div className="post">
-      <PostHeader nickName={nickName} updatedAt={updatedAt} />
+      <PostHeader
+        nickName={props.postData.nickName}
+        updatedAt={props.postData.updatedAt}
+      />
       <PostContent
-        content={content}
+        content={props.postData.content}
         contentToggle={contentToggle}
         setContentToggle={setContentToggle}
       />
-      <PostFooter />
+      <PostFooter
+        likeCount={props.postData.like}
+        commentCount={props.postData.comment.length}
+      />
       {contentToggle && <CommentBox />}
     </div>
   );

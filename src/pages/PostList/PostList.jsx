@@ -19,7 +19,7 @@ const PostList = () => {
         setPostDataList(data);
       });
   }, []);
-  console.log(postDataList);
+
   return (
     <>
       <div className="PostList">
