@@ -3,22 +3,32 @@ import HeartButton from '../HeartButton/HeartButton';
 import './PostFooter.scss';
 
 const PostFooter = props => {
-  const [like, setLike] = useState(true);
+  const [like, setLike] = useState(false);
 
   const toggleLike = e => {
     setLike(!like);
   };
 
   // useEffect(() => {
-  // fetch('/data/data.json',{
-  //   method: "POST",
-  //   header: {
-  //     "Contest-Type": "",
-  //   },
-  //   body: JSON.stringify({
-  //     like
+
+  //   fetch('/data/data.json', {
+  //     method: 'POST',
+  //     header: {
+  //       'Contest-Type': '',
+  //     },
+  //     body: JSON.stringify({
+  //       isLike: like,
+  //     }),
   //   })
-  // })
+
+  //   .then((res) => {return res.json()})
+  //   .then((data) => {
+  //     const fetchData = () => {
+  //       if (isLike === true) setLike(true)}
+  //       fetchData();
+  //   })
+
+  //   },[]);
 
   //   like ? (props.likeCount += 1) : (props.likeCount -= 1);
   // }, [like]);
