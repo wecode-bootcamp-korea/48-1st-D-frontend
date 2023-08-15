@@ -7,11 +7,7 @@ import './PostList.scss';
 
 const PostList = () => {
   const [postDataList, setPostDataList] = useState();
-  // const dateString = props.updatedAt;
-  // const dateObject = new Date(dateString);
-  postDataList?.map(x => {
-    console.log(x.createdAt);
-  });
+
   useEffect(() => {
     fetch('/data/data.json', {
       method: 'GET',
@@ -21,6 +17,11 @@ const PostList = () => {
       })
       .then(data => {
         setPostDataList(data.data);
+        const sortedPosts = data.data.sort((a, b) => {
+          return new Date(b.updatedAt) - new Date(a.updatedAt);
+        });
+
+        setPostDataList(sortedPosts);
       });
   }, []);
 
