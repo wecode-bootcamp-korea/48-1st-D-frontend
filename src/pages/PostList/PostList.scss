@@ -1,0 +1,127 @@
+.PostList {
+  margin: 40px auto 110px auto;
+  padding: 40px auto;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  max-width: 576px;
+  min-width: 320px;
+  height: 100%;
+
+  .container {
+    position: relative;
+    display: flex;
+    padding: 0px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    align-self: stretch;
+    width: 100%;
+    height: 100%;
+
+    .posts {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 24px;
+      align-self: stretch;
+      width: 100%;
+      height: 100%;
+
+      .postHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+
+        .DateAndDeleteWrap {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+
+          .postCreatedDate {
+            color: var(--grey-60, #999);
+            font-feature-settings:
+              'clig' off,
+              'liga' off;
+
+            font-family: 'Pretendard-Regular';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+          }
+          .postUpdateButton {
+            color: var(--red, #5d5d5d);
+            font-feature-settings:
+              'clig' off,
+              'liga' off;
+
+            font-family: 'Pretendard-Regular';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+          }
+          .postDeleteButton {
+            color: var(--red, #ff3636);
+            font-feature-settings:
+              'clig' off,
+              'liga' off;
+
+            font-family: 'Pretendard-Regular';
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+    .editorBox {
+      padding-right: 50px;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+
+      width: 100%;
+      height: 95px;
+      max-width: 576px;
+      bottom: 0;
+      flex-direction: column;
+
+      align-items: flex-end;
+      gap: 8px;
+      background: white;
+      color: white;
+      .editorButton {
+        display: flex;
+        width: 120px;
+        height: var(--input-height, 56px);
+        padding: 0px 34px;
+        justify-content: center;
+        align-items: center;
+        border-radius: 6px;
+        background: var(--blue, #2d71f7);
+
+        color: var(--white, #fff);
+        text-align: center;
+
+        font-feature-settings:
+          'clig' off,
+          'liga' off;
+
+        font-family: 'Pretendard-Regular';
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 800;
+        line-height: normal;
+      }
+    }
+  }
+}
