@@ -8,17 +8,22 @@ const SignUp = () => {
     navigate('/');
   };
 
+  const goToSignUpDone = () => {
+    navigate('/signup-done');
+  };
+
   return (
-    <div className="signup">
-      <h1>회원가입 화면</h1>
+    <div className="signUp">
       <div className="btnPrev">
         <button onClick={goToLogin}>뒤로</button>
       </div>
       <div className="inputWrap">
         <h2>회원가입</h2>
         <div className="inputBox">
-          <p>기본 정보</p>
-          <span>필수사항</span>
+          <div className="title">
+            <p>기본 정보</p>
+            <span>필수사항</span>
+          </div>
           <input
             type="text"
             id="userEmail"
@@ -39,16 +44,18 @@ const SignUp = () => {
           />
         </div>
         <div className="inputBox">
-          <p>닉네임과 프로필 이미지</p>
-          <span>선택사항</span>
+          <div className="title">
+            <p>닉네임과 프로필 이미지</p>
+            <span>선택사항</span>
+          </div>
           <input
             type="text"
-            id="userName"
+            id="nickName"
             //onChange={}
             placeholder="닉네임"
           />
         </div>
-        <div className="inputBox">
+        {/* <div className="inputBox">
           <p>전화번호</p>
           <span>선택사항</span>
           <select>
@@ -84,7 +91,11 @@ const SignUp = () => {
             //onChange={}
             placeholder="닉네임"
           />
-        </div>
+        </div> */}
+
+        <button className="btnSubmit" onClick={goToSignUpDone}>
+          회원 가입
+        </button>
       </div>
     </div>
   );
