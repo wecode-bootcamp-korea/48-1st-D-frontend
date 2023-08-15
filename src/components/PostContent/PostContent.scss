@@ -1,0 +1,13 @@
+.postContent {
+  align-self: stretch;
+  color: var(--black, #000);
+  font-feature-settings:
+    'clig' off,
+    'liga' off;
+
+  font-family: 'Pretendard-Regular';
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+}
