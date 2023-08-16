@@ -1,7 +1,7 @@
 import './PostHeader.scss';
 
 const PostHeader = props => {
-  const dateString = props.updatedAt;
+  const dateString = props.createdAt;
   const dateObject = new Date(dateString);
 
   const postDelete = () => {
@@ -13,9 +13,7 @@ const PostHeader = props => {
           Authorization: localStorage.getItem('access_token'),
         },
       },
-      body: JSON.stringify({
-        id: props.postId,
-      }),
+      body: JSON.stringify({}),
     });
   };
 
@@ -23,20 +21,21 @@ const PostHeader = props => {
     <div className="postHeader">
       <div className="userInfo">
         <img src="/images/Default-userprofileimage.png" alt="프로필이미지" />
-        <div className="userProfile">{props.nickName}</div>
+        <div className="userProfile">{props.userName}</div>
       </div>
       <div className="DateAndDeleteWrap">
         <div className="postCreatedDate">
           {dateObject.getFullYear()}.{dateObject.getMonth() + 1}.
           {dateObject.getDate()}
         </div>
-        {props.userId == true /*토큰의 유저id*/ && (
+        {props.isMyPost && (
+          <>
             <div className="postUpdateButton">수정</div>
-          ) && (
             <div className="postDeleteButton" onClick={postDelete}>
               삭제
             </div>
-          )}
+          </>
+        )}
       </div>
     </div>
   );

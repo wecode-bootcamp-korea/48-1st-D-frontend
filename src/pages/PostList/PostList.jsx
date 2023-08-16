@@ -33,7 +33,7 @@ const PostList = () => {
       <div className="container">
         <article className="posts">
           {postDataList?.map((postData, i) => (
-            <Post postData={postData} key={postData.id}></Post>
+            <Post postData={postData} key={postData.postId}></Post>
           ))}
           {/*TODO 로그인 한 유저일 때 버튼 활성화*/}
           <EditorButton />

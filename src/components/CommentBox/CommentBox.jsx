@@ -22,15 +22,15 @@ const commentDelete = () => {
 const CommentBox = props => {
   const [commentDataValue, setcommentDataValue] = useState({
     inputComment: '',
-    nickName: '',
+    userName: '',
   });
 
   const handleInput = e => {
-    const { value, nickName } = e.target;
+    const { value, userName } = e.target;
     setcommentDataValue({
       ...commentDataValue,
       inputComment: value,
-      nickName: '',
+      userName: '',
     });
   };
 
@@ -45,7 +45,7 @@ const CommentBox = props => {
       },
       body: JSON.stringify({
         comment: commentDataValue.inputComment,
-        nickName: commentDataValue.nickName,
+        userName: commentDataValue.userName,
       }),
     });
   };
@@ -72,7 +72,14 @@ const CommentList = props => {
   return (
     <div className="commentList">
       {props.comments.map(comment => {
-        return <CommentWrap comment={comment} key={comment.commentId} />;
+        return (
+          <CommentWrap
+            comment={comment}
+            key={comment.commentId}
+            userName={comment.userName}
+            isMyReply={comment.isMyReply}
+          />
+        );
       })}
     </div>
   );
@@ -89,19 +96,18 @@ const CommentWrap = props => {
       </div>
       <div className="commentRightBox">
         <div className="commentuserInfo">
-          <div className="commentNickName">{props.comment.nickName}</div>
+          <div className="commentUserName">{props.comment.userName}</div>
           <div className="commentDeleteCreatedAtWrap">
             <div className="commentCreatedAt">
               {dateObject.getFullYear()}.{dateObject.getMonth() + 1}.
               {dateObject.getDate()}
             </div>
-            {props.userId ==
-              {
-                /*토큰의 유저id*/
-              } && (
-              <div className="commentDelete" onClick={commentDelete}>
-                삭제
-              </div>
+            {props.isMyReply && (
+              <>
+                <div className="commentDelete" onClick={commentDelete}>
+                  삭제
+                </div>
+              </>
             )}
           </div>
         </div>

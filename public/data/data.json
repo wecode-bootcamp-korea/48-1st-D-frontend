@@ -26,9 +26,9 @@
         },
         {
           "commentId": 3,
-          "userName": "김슬기",
-          "comment": "미혜님 오늘 도시락 맛은 어때요?",
-          "isMyReply": false,
+          "userName": "전미혜",
+          "comment": "미혜야....힘내힘냉🙂😋",
+          "isMyReply": true,
           "createdAt": "2023-08-09T19:26:17Z"
         }
       ],

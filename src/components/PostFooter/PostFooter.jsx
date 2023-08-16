@@ -1,15 +1,24 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import HeartButton from '../HeartButton/HeartButton';
 import './PostFooter.scss';
 
 const PostFooter = props => {
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useState(props.isLiked);
 
   const toggleLike = e => {
-    setLike(!like);
+    setLike(prev => !prev);
   };
 
-  {
+  const useDidMountEffect = (func, deps) => {
+    const didMount = useRef(false);
+
+    useEffect(() => {
+      if (didMount.current) func();
+      else didMount.current = true;
+    }, deps);
+  };
+
+  useDidMountEffect(() => {
     like
       ? fetch('/data/data.json', {
           method: 'POST',
@@ -17,11 +26,7 @@ const PostFooter = props => {
             'Content-Type': 'application/json;charset=utf-8',
             Authorization: localStorage.getItem('access_token'),
           },
-          body: JSON.stringify({
-            userId: {
-              /*토큰의 유저Id 값*/
-            },
-          }),
+          body: JSON.stringify({}),
         })
       : fetch('/data/data.json', {
           method: 'DELETE',
@@ -29,17 +34,10 @@ const PostFooter = props => {
             'Content-Type': 'application/json;charset=utf-8',
             Authorization: localStorage.getItem('access_token'),
           },
-          body: JSON.stringify({
-            userId: {
-              /*토큰의 유저Id 값*/
-            },
-          }),
+          body: JSON.stringify({}),
         });
-  }
+  }, [like]);
 
-  {
-    /*TODO 좋아요 개수 DB에서 받아오기*/
-  }
   return (
     <div className="postFooter">
       <div className="likeAndCommentWrap">

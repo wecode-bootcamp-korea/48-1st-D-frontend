@@ -11,11 +11,10 @@ const Post = props => {
   return (
     <div className="post">
       <PostHeader
-        userId={props.postData.userId}
-        postId={props.postData.id}
-        nickName={props.postData.nickName}
-        updatedAt={props.postData.updatedAt}
-        updataAt={props.postData.updataAt}
+        postId={props.postData.postId}
+        userName={props.postData.userName}
+        createdAt={props.postData.createdAt}
+        isMyPost={props.postData.isMyPost}
       />
       <PostContent
         content={props.postData.content}
@@ -23,6 +22,7 @@ const Post = props => {
         setContentToggle={setContentToggle}
       />
       <PostFooter
+        isLiked={props.postData.isLiked}
         userId={props.postData.usrId}
         likeCount={props.postData.likeCount}
         commentCount={props.postData.comments}
@@ -32,6 +32,7 @@ const Post = props => {
           userId={props.postData.usrId}
           comments={props.postData.comments}
           commentId={props.postData.comments.commentId}
+          isMyReply={props.postData.comments.isMyReply}
         />
       )}
     </div>
