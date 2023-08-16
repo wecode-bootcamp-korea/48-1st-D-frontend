@@ -6,37 +6,28 @@ const PostFooter = props => {
   const [like, setLike] = useState(props.isLiked);
 
   const toggleLike = e => {
-    setLike(prev => !prev);
+    setLike(prev => {
+      !prev
+        ? fetch('/data/data.json', {
+            method: 'POST',
+            header: {
+              'Content-Type': 'application/json;charset=utf-8',
+              Authorization: localStorage.getItem('access_token'),
+            },
+            body: JSON.stringify({}),
+          })
+        : fetch('/data/data.json', {
+            method: 'DELETE',
+            header: {
+              'Content-Type': 'application/json;charset=utf-8',
+              Authorization: localStorage.getItem('access_token'),
+            },
+            body: JSON.stringify({}),
+          });
+
+      return !prev;
+    });
   };
-
-  const useDidMountEffect = (func, deps) => {
-    const didMount = useRef(false);
-
-    useEffect(() => {
-      if (didMount.current) func();
-      else didMount.current = true;
-    }, deps);
-  };
-
-  useDidMountEffect(() => {
-    like
-      ? fetch('/data/data.json', {
-          method: 'POST',
-          header: {
-            'Content-Type': 'application/json;charset=utf-8',
-            Authorization: localStorage.getItem('access_token'),
-          },
-          body: JSON.stringify({}),
-        })
-      : fetch('/data/data.json', {
-          method: 'DELETE',
-          header: {
-            'Content-Type': 'application/json;charset=utf-8',
-            Authorization: localStorage.getItem('access_token'),
-          },
-          body: JSON.stringify({}),
-        });
-  }, [like]);
 
   return (
     <div className="postFooter">
