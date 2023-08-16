@@ -2,6 +2,29 @@ import React, { useEffect, useState } from 'react';
 import './CommentBox.scss';
 
 const CommentBox = props => {
+  const addToCommentData = () => {
+    fetch('/data/data.json', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+      },
+      body: JSON.stringify({
+        comment: commentDataValue.inputComment,
+        nickName: commentDataValue.nickName,
+      }),
+    });
+  };
+
+  const [commentDataValue, setcommentDataValue] = useState({
+    inputComment: '',
+    nickName: '',
+  });
+
+  const handleInput = e => {
+    const { value, nickName } = e.target;
+    setcommentDataValue({ ...commentDataValue, [nickName]: value });
+  };
+
   return (
     <div className="commentBox">
       <div className="commentInputBox">
@@ -9,8 +32,11 @@ const CommentBox = props => {
           type="text"
           className="commentInput"
           placeholder="댓글을 작성해주세요."
+          onChange={handleInput}
         ></input>
-        <button className="commentAddToListButton">댓글 게시</button>
+        <button className="commentAddToListButton" onClick={addToCommentData}>
+          댓글 게시
+        </button>
       </div>
       <CommentList comments={props.comments} />
     </div>
@@ -20,7 +46,7 @@ const CommentList = props => {
   return (
     <div className="commentList">
       {props.comments.map(comment => {
-        return <CommentWrap comment={comment} />;
+        return <CommentWrap comment={comment} key={comment.commentId} />;
       })}
     </div>
   );
@@ -37,7 +63,7 @@ const CommentWrap = props => {
       </div>
       <div className="zzz">
         <div className="commentuserInfo">
-          <div className="commentUserName">{props.comment.userName}</div>
+          <div className="commentNickName">{props.comment.nickName}</div>
           <div className="commentDeleteCreatedAtWrap">
             <div className="commentCreatedAt">
               {dateObject.getFullYear()}.{dateObject.getMonth() + 1}.

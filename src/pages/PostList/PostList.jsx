@@ -24,13 +24,13 @@ const PostList = () => {
         setPostDataList(sortedPosts);
       });
   }, []);
-
+  console.log(postDataList);
   return (
     <div className="PostList">
       <div className="container">
         <article className="posts">
           {postDataList?.map((postData, i) => (
-            <Post postData={postData} key={postData.key}></Post>
+            <Post postData={postData} key={postData.id}></Post>
           ))}
           <EditorButton />
         </article>

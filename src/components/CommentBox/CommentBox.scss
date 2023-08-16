@@ -38,6 +38,7 @@
 
   .commentList {
     padding: 24px, 0;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -78,13 +79,13 @@
         align-self: stretch;
         width: 100%;
 
-        .commentUserName {
+        .commentNickName {
           color: var(--black, #000);
           font-feature-settings:
             'clig' off,
             'liga' off;
           /* Name_Mobile */
-          font-family: Apple SD Gothic Neo;
+          font-family: 'Pretendard-Regular';
           font-size: 16px;
           font-style: normal;
           font-weight: 700;
@@ -102,7 +103,7 @@
               'clig' off,
               'liga' off;
             /* Body2 */
-            font-family: Apple SD Gothic Neo;
+            font-family: 'Pretendard-Regular';
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
@@ -115,7 +116,7 @@
               'clig' off,
               'liga' off;
             /* Body2 */
-            font-family: Apple SD Gothic Neo;
+            font-family: 'Pretendard-Regular';
             font-size: 16px;
             font-style: normal;
             font-weight: 400;
@@ -130,7 +131,7 @@
           'clig' off,
           'liga' off;
         /* Body2 */
-        font-family: Apple SD Gothic Neo;
+        font-family: 'Pretendard-Regular';
         font-size: 16px;
         font-style: normal;
         font-weight: 400;
