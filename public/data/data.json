@@ -1,101 +1,108 @@
 {
   "data": [
     {
-      "id": 1,
-      "nickName": "한지선",
-      "isLike": false,
-      "likeCount": 0,
-      "content": "일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못 돌리는 사람들의경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고 믿는다. 이 현상은1966년 MIT 교수 조셉 웨이젠바움이 만든 챗봇인 ELIZA의 이름을 따서명명되었다. 일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못돌리는 사람들의 경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고믿는다. 이 현상은 1966년 MIT 교수웨이젠바움이 만든 챗봇인 ELIZA의이름을 따서 명명되었다.",
+      "postId": 1,
+      "userName": "전미혜",
+      "profileImage": "/images/Default-userprofileimage.png",
+      "isMyPost": true,
+      "content": "안뇽하세용💌❣💞💝💘👱‍♀️👩‍🦰👧👨‍🦱👩‍🦲.",
+      "isLiked": false,
+      "likeCount": 8,
+      "commentsCount": 3,
       "comments": [
         {
           "commentId": 1,
-          "nickName": "최우식",
-          "userProfile": "https://source.unsplash.com/random/?superstar",
-          "comment": "위코드 너무 재미있엉",
-          "createdAt": "2023-07-27T21:26:17Z"
+          "userName": "최우식",
+          "comment": "안녕하세요!!.",
+          "isMyReply": false,
+          "createdAt": "2023-08-11T19:26:17Z"
         },
         {
           "commentId": 2,
-          "nickName": "yujin_star",
-          "userProfile": "https://source.unsplash.com/random/?papa",
-          "comment": "아~~~~~~~~~캠핑 가고 싶다!",
-          "createdAt": "2023-07-27T19:26:17Z"
+          "userName": "안유진",
+          "comment": "미혜님!! 공부좀 하세요.",
+          "isMyReply": false,
+          "createdAt": "2023-06-11T19:26:17Z"
         },
         {
           "commentId": 3,
-          "nickName": "algp1222",
-          "userProfile": "https://source.unsplash.com/random/?papa",
-          "comment": "공부하자공부하자",
-          "createdAt": "2023-07-27T19:26:17Z"
+          "userName": "김슬기",
+          "comment": "미혜님 오늘 도시락 맛은 어때요?",
+          "isMyReply": false,
+          "createdAt": "2023-08-09T19:26:17Z"
         }
       ],
-      "createdAt": "2023-07-20T19:26:17Z",
-      "updatedAt": "2023-07-21T19:26:17Z"
+      "createdAt": "2023-08-09T19:26:17Z"
     },
 
     {
-      "id": 2,
-      "nickName": "김슬기",
-      "isLike": false,
-      "likeCount": 0,
-      "content": "안뇽하세용💌❣💞💝💘👱‍♀️👩‍🦰👧👨‍🦱👩‍🦲.",
+      "postId": 2,
+      "userName": "한지선",
+      "profileImage": "/images/Default-userprofileimage.png",
+      "isMyPost": false,
+      "content": "씨스루 굴림만두에 새우를 감싼 [장수손만두]에 다녀왔습니다.인천에선 이미 유명한 만두만집 이더라구요! 외관에서부터 찐맛집을 나타내는데요,벽에는 다양한 상장들과 유명인 사인이 있었어요호두과자 크기만한 기본만두는 4천원이고,새우 한 마리가 통으로 들어있어요 새우굴림5천원입니다! 뿐만 아니라 날치알만두와 찐빵도 팔고있어 메뉴 고르기가 은근 어렵답니다😆",
+      "isLiked": true,
+      "likeCount": 10,
+      "commentsCount": 2,
       "comments": [
         {
           "commentId": 1,
-          "nickName": "loveyou<3",
-          "userProfile": "https://source.unsplash.com/random/?puppy",
-          "comment": "지금 먹고싶은 것 : 치킨, 초밥, 잡채밥",
-          "createdAt": "2023-07-27T21:26:17Z"
+          "userName": "최우식",
+          "comment": "지선님....최고!",
+          "isMyReply": false,
+          "createdAt": "2023-08-01T19:26:17Z"
         },
         {
           "commentId": 2,
-          "nickName": "algp1205",
-          "userProfile": "https://source.unsplash.com/random/?boy",
-          "comment": "이미지가 너무 좋으신데 DM부탁드려도 될까요?",
-          "createdAt": "2023-07-27T19:26:17Z"
+          "userName": "전미혜",
+          "comment": "D팀 최고최고 ><",
+          "isMyReply": true,
+          "createdAt": "2023-07-10T19:26:17Z"
         }
       ],
-      "createdAt": "2023-08-11T19:26:17Z",
-      "updatedAt": "2023-08-11T19:26:17Z"
+      "createdAt": "2023-07-22T10:26:17Z"
     },
+
     {
-      "id": 3,
-      "nickName": "전미혜",
-      "isLike": false,
-      "likeCount": 0,
-      "content": "❤🧡🧡💛💚💙💜ELIZA의 이름을 따서명명되었다. 일라이자 효과는 인간의 사고 과정과 감정을 AI 시스템에 잘못돌리는 사람들의 경향을 말하며, 따라서 시스템이 실제보다 더 지능적이라고믿는다. 이 현상은 1966년 MIT 교수웨이젠바움이 만든 챗봇인 ELIZA의이름을 따서 명명되었다.",
+      "postId": 3,
+      "userName": "김슬기",
+      "profileImage": "/images/Default-userprofileimage.png",
+      "isMyPost": false,
+      "content": "📚고정식 자전거 운동방법과 팁  1️⃣안장 높이 설정  2️⃣손잡이와 자세 설정  3️⃣페달링 속도와 무게 설정  4️⃣페달링 방향 도움되는 정보를 계속 받아보고 싶다면 팔로우🙋‍♂️ 도움이 되셨다면 좋아요 꾹❣️ 헬스하는 지인 태그🏷️ 스토리 공유✈️ 는 저에게 정말 큰 힘이 됩니다🫡 오늘도 소소한 운동 지식 나눠요😎",
+      "isLiked": false,
+      "likeCount": 9,
+      "commentsCount": 4,
       "comments": [
         {
           "commentId": 1,
-          "nickName": "pliossun",
-          "userProfile": "https://source.unsplash.com/random/?men",
-          "comment": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ아 웃겨",
-          "createdAt": "2023-07-27T21:26:17Z"
+          "userName": "전미혜",
+          "comment": "슬기님~~~~~~~~좋은 아침 되세요",
+          "isMyReply": true,
+          "createdAt": "2023-08-15T19:26:17Z"
         },
         {
           "commentId": 2,
-          "nickName": "wecode_founder",
-          "userProfile": "https://source.unsplash.com/random/?women",
-          "comment": "주말에 뭐먹징?????",
-          "createdAt": "2023-07-27T19:26:17Z"
+          "userName": "허영생",
+          "comment": "Show me your eyes and give you my love~~난 네가 좋은걸 love you forever",
+          "isMyReply": false,
+          "createdAt": "2023-08-11T19:26:17Z"
         },
         {
           "commentId": 3,
-          "nickName": "pliossun",
-          "userProfile": "https://source.unsplash.com/random/?men",
-          "comment": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ아 웃겨",
-          "createdAt": "2023-07-27T21:26:17Z"
+          "userName": "영웅재중",
+          "comment": "ㅋㅋㅋㅋㅋㅋ아 웃겨!!",
+          "isMyReply": false,
+          "createdAt": "2023-07-25T19:26:17Z"
         },
         {
           "commentId": 4,
-          "nickName": "pliossun",
-          "userProfile": "https://source.unsplash.com/random/?men",
-          "comment": "ㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋㅋ아 웃겨",
-          "createdAt": "2023-07-27T21:26:17Z"
+          "userName": "서강준",
+          "comment": "하하호호하하호호",
+          "isMyReply": false,
+          "createdAt": "2023-07-23T19:26:17Z"
         }
       ],
-      "createdAt": "2022-05-13T10:20:17Z",
-      "updatedAt": "2022-05-14T19:20:17Z"
+      "createdAt": "2023-07-20T19:26:17Z"
     }
   ]
 }
