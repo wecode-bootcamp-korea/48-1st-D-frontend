@@ -2,6 +2,20 @@ import React, { useEffect, useState } from 'react';
 import './CommentBox.scss';
 
 const CommentBox = props => {
+  const [commentDataValue, setcommentDataValue] = useState({
+    inputComment: '',
+    nickName: '',
+  });
+
+  const handleInput = e => {
+    const { value, nickName } = e.target;
+    setcommentDataValue({
+      ...commentDataValue,
+      inputComment: value,
+      nickName: '',
+    });
+  };
+
   const addToCommentData = () => {
     fetch('/data/data.json', {
       method: 'POST',
@@ -13,16 +27,6 @@ const CommentBox = props => {
         nickName: commentDataValue.nickName,
       }),
     });
-  };
-
-  const [commentDataValue, setcommentDataValue] = useState({
-    inputComment: '',
-    nickName: '',
-  });
-
-  const handleInput = e => {
-    const { value, nickName } = e.target;
-    setcommentDataValue({ ...commentDataValue, [nickName]: value });
   };
 
   return (
