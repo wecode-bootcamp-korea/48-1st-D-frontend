@@ -4,6 +4,21 @@ const PostHeader = props => {
   const dateString = props.updatedAt;
   const dateObject = new Date(dateString);
 
+  const postDelete = () => {
+    fetch('/data/data.json', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        headers: {
+          Authorization: localStorage.getItem('access_token'),
+        },
+      },
+      body: JSON.stringify({
+        id: props.postId,
+      }),
+    });
+  };
+
   return (
     <div className="postHeader">
       <div className="userInfo">
@@ -15,8 +30,13 @@ const PostHeader = props => {
           {dateObject.getFullYear()}.{dateObject.getMonth() + 1}.
           {dateObject.getDate()}
         </div>
-        <div className="postUpdateButton">수정</div>
-        <div className="postDeleteButton">삭제</div>
+        {props.userId == true /*토큰의 유저id*/ && (
+            <div className="postUpdateButton">수정</div>
+          ) && (
+            <div className="postDeleteButton" onClick={postDelete}>
+              삭제
+            </div>
+          )}
       </div>
     </div>
   );

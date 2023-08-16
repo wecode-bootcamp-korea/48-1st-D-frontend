@@ -21,6 +21,7 @@
     padding: 0px 34px;
     justify-content: center;
     align-items: center;
+    border-color: #2d71f7;
     border-radius: 6px;
     background: var(--blue, #2d71f7);
 
@@ -36,5 +37,9 @@
     font-style: normal;
     font-weight: 800;
     line-height: normal;
+  }
+  .editorButton:hover {
+    background: var(--navy, #083e7f);
+    border-color: #083e7f;
   }
 }

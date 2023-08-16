@@ -9,30 +9,37 @@ const PostFooter = props => {
     setLike(!like);
   };
 
-  // useEffect(() => {
+  {
+    like
+      ? fetch('/data/data.json', {
+          method: 'POST',
+          header: {
+            'Content-Type': 'application/json;charset=utf-8',
+            Authorization: localStorage.getItem('access_token'),
+          },
+          body: JSON.stringify({
+            userId: {
+              /*토큰의 유저Id 값*/
+            },
+          }),
+        })
+      : fetch('/data/data.json', {
+          method: 'DELETE',
+          header: {
+            'Content-Type': 'application/json;charset=utf-8',
+            Authorization: localStorage.getItem('access_token'),
+          },
+          body: JSON.stringify({
+            userId: {
+              /*토큰의 유저Id 값*/
+            },
+          }),
+        });
+  }
 
-  //   fetch('/data/data.json', {
-  //     method: 'POST',
-  //     header: {
-  //       'Contest-Type': '',
-  //     },
-  //     body: JSON.stringify({
-  //       isLike: like,
-  //     }),
-  //   })
-
-  //   .then((res) => {return res.json()})
-  //   .then((data) => {
-  //     const fetchData = () => {
-  //       if (isLike === true) setLike(true)}
-  //       fetchData();
-  //   })
-
-  //   },[]);
-
-  //   like ? (props.likeCount += 1) : (props.likeCount -= 1);
-  // }, [like]);
-
+  {
+    /*TODO 좋아요 개수 DB에서 받아오기*/
+  }
   return (
     <div className="postFooter">
       <div className="likeAndCommentWrap">

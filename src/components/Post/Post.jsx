@@ -11,6 +11,8 @@ const Post = props => {
   return (
     <div className="post">
       <PostHeader
+        userId={props.postData.userId}
+        postId={props.postData.id}
         nickName={props.postData.nickName}
         updatedAt={props.postData.updatedAt}
         updataAt={props.postData.updataAt}
@@ -21,10 +23,17 @@ const Post = props => {
         setContentToggle={setContentToggle}
       />
       <PostFooter
+        userId={props.postData.usrId}
         likeCount={props.postData.likeCount}
         commentCount={props.postData.comments}
       />
-      {contentToggle && <CommentBox comments={props.postData.comments} />}
+      {contentToggle && (
+        <CommentBox
+          userId={props.postData.usrId}
+          comments={props.postData.comments}
+          commentId={props.postData.comments.commentId}
+        />
+      )}
     </div>
   );
 };

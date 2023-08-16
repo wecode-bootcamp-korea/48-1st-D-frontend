@@ -11,6 +11,10 @@ const PostList = () => {
   useEffect(() => {
     fetch('/data/data.json', {
       method: 'GET',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('access_token'),
+      },
     })
       .then(res => {
         return res.json();
@@ -20,11 +24,10 @@ const PostList = () => {
         const sortedPosts = data.data.sort((a, b) => {
           return new Date(b.createdAt) - new Date(a.createdAt);
         });
-
         setPostDataList(sortedPosts);
       });
   }, []);
-  console.log(postDataList);
+
   return (
     <div className="PostList">
       <div className="container">
@@ -32,6 +35,7 @@ const PostList = () => {
           {postDataList?.map((postData, i) => (
             <Post postData={postData} key={postData.id}></Post>
           ))}
+          {/*TODO 로그인 한 유저일 때 버튼 활성화*/}
           <EditorButton />
         </article>
       </div>

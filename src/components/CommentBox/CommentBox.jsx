@@ -1,6 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import './CommentBox.scss';
 
+const commentDelete = () => {
+  fetch('/data/data.json', {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+      // Authorization: localStorage.getItem('access_token'),
+    },
+  }).then(res => {
+    if (res.ok) {
+      alert('삭제되었습니다!');
+      return;
+    }
+    // if (!res.ok) {
+    //   throw new Error('Error');
+    // }
+  });
+};
+
 const CommentBox = props => {
   const [commentDataValue, setcommentDataValue] = useState({
     inputComment: '',
@@ -21,6 +39,9 @@ const CommentBox = props => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json;charset=utf-8',
+        headers: {
+          Authorization: localStorage.getItem('access_token'),
+        },
       },
       body: JSON.stringify({
         comment: commentDataValue.inputComment,
@@ -46,6 +67,7 @@ const CommentBox = props => {
     </div>
   );
 };
+
 const CommentList = props => {
   return (
     <div className="commentList">
@@ -65,7 +87,7 @@ const CommentWrap = props => {
       <div className="commentUserProfileBox">
         <img src="/images/Default-userprofileimage.png" alt="프로필이미지" />
       </div>
-      <div className="zzz">
+      <div className="commentRightBox">
         <div className="commentuserInfo">
           <div className="commentNickName">{props.comment.nickName}</div>
           <div className="commentDeleteCreatedAtWrap">
@@ -73,7 +95,14 @@ const CommentWrap = props => {
               {dateObject.getFullYear()}.{dateObject.getMonth() + 1}.
               {dateObject.getDate()}
             </div>
-            <div className="commentDelete">삭제</div>
+            {props.userId ==
+              {
+                /*토큰의 유저id*/
+              } && (
+              <div className="commentDelete" onClick={commentDelete}>
+                삭제
+              </div>
+            )}
           </div>
         </div>
         <div className="comment">{props.comment.comment}</div>
