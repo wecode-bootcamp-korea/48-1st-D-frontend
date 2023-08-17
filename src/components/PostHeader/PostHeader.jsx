@@ -1,8 +1,13 @@
+import { useNavigate } from 'react-router-dom';
 import './PostHeader.scss';
 
 const PostHeader = props => {
   const dateString = props.createdAt;
   const dateObject = new Date(dateString);
+  const navigate = useNavigate();
+  const goToAddEditingPage = () => {
+    navigate('/post-editing');
+  };
 
   const postDelete = () => {
     fetch('/data/data.json', {
@@ -30,7 +35,9 @@ const PostHeader = props => {
         </div>
         {props.isMyPost && (
           <>
-            <div className="postUpdateButton">수정</div>
+            <div className="postUpdateButton" onClick={goToAddEditingPage}>
+              수정
+            </div>
             <div className="postDeleteButton" onClick={postDelete}>
               삭제
             </div>
