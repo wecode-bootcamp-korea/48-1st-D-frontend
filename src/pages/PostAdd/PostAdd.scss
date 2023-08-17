@@ -1,6 +1,6 @@
 @import '../../styles/variables.scss';
 
-.rootPostEditing {
+.rootPostAdd {
   margin: 0 auto;
   padding: 20px 0;
   width: 100%;
@@ -16,29 +16,29 @@
     visibility: hidden;
   }
 
-  .postEditing {
+  .postAdd {
     width: 100%;
     height: 100%;
     padding: 40px 0px;
 
-    .postContainer {
+    .postAddContainer {
       padding: 0px 24px;
 
-      .postPublish {
+      .postAddPublish {
         display: flex;
         padding-bottom: 32px;
         align-items: flex-start;
         gap: 24px;
         height: 70vh;
 
-        .profileThumb {
+        .profileAddThumb {
           height: 48px;
           flex-shrink: 0;
           border-radius: 48px;
           border: solid 1px $grey88;
         }
 
-        .postContent {
+        .postAddContent {
           display: flex;
           flex-direction: column;
           align-items: flex-start;
@@ -46,14 +46,14 @@
           flex: 1;
           align-self: stretch;
 
-          .postContentName {
+          .postAddContentName {
             color: $black;
             font-size: 20px;
             font-weight: 700;
             line-height: normal;
           }
 
-          .postContentText {
+          .postAddContentText {
             align-self: stretch;
             border-radius: 6px;
             border: 1px solid $grey60;
@@ -64,29 +64,12 @@
       }
     }
 
-    .postAction {
+    .postAddAction {
       display: flex;
       padding-top: 15px;
       justify-content: space-between;
       align-items: flex-start;
       border-top: 1px solid $grey88;
-
-      .buttonLine {
-        width: 120px;
-        height: var(--input-height, 56px);
-        border-radius: 6px;
-        border: 1px solid $blue;
-        background: $white;
-        color: $blue;
-      }
-
-      .buttonFill {
-        width: 120px;
-        height: var(--input-height, 56px);
-        border-radius: 6px;
-        background: $blue;
-        color: $white;
-      }
     }
   }
 }
