@@ -1,23 +1,28 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './CommentBox.scss';
 
 const commentDelete = () => {
-  alert('정말 삭제하시겠습니까?');
-  fetch('/data/data.json', {
-    method: 'DELETE',
-    headers: {
-      'Content-Type': 'application/json;charset=utf-8',
-      Authorization: localStorage.getItem('access_token'),
-    },
-  }).then(res => {
-    if (res.ok) {
-      alert('삭제되었습니다!');
-      return;
-    }
-    // if (!res.ok) {
-    //   throw new Error('Error');
-    // }
-  });
+  if (window.confirm('정말 삭제하시겠습니까?')) {
+    fetch('/data/data.json', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json;charset=utf-8',
+        Authorization: localStorage.getItem('access_token'),
+      },
+    })
+      .then(res => {
+        if (res.ok) {
+          alert('삭제되었습니다!');
+          return;
+        }
+        if (!res.ok) {
+          throw new Error('Error');
+        }
+      })
+      .catch(() => {
+        alert('삭제에 실..패..했습니다....');
+      });
+  }
 };
 
 const CommentBox = props => {
