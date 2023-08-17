@@ -63,12 +63,27 @@ const SignUp = () => {
     }
   };
 
-  console.log(
+  useEffect(() => {}, [
+    userInfo,
     showEmailErrorMessage,
     showPasswordErrorMessage,
-    showNicknameErrorMessage,
     showPasswordConfirmErrorMessage,
-  );
+    showNicknameErrorMessage,
+  ]);
+
+  const isInputValid =
+    showEmailErrorMessage == false &&
+    showNicknameErrorMessage == false &&
+    showPasswordErrorMessage == false &&
+    showPasswordConfirmErrorMessage == false;
+
+  const goToSignUpDone = () => {
+    if (isInputValid === true) {
+      navigate('/signup-done');
+    } else {
+      alert('실패');
+    }
+  };
 
   // const goToSignUpDone = () => {
   //   fetch('API', {
@@ -92,22 +107,6 @@ const SignUp = () => {
   //       }
   //     });
   // };
-
-  // useEffect(() => {}, [
-  //   userInfo,
-  //   showEmailErrorMessage,
-  //   showPasswordErrorMessage,
-  //   showPasswordConfirmErrorMessage,
-  //   showNicknameErrorMessage,
-  // ]);
-
-  // useEffect(() => {}, [value]);
-
-  // const isInputValid =
-  //   setShowEmailErrorMessage(false) &&
-  //   setShowNicknameErrorMessage(false) &&
-  //   setShowPasswordConfirmErrorMessage(false) &&
-  //   setShowPasswordErrorMessage(false);
 
   return (
     <div className="signUp">
@@ -205,7 +204,13 @@ const SignUp = () => {
           />
         </div> */}
 
-        <button className="btnSubmit">회원 가입</button>
+        <button
+          className="btnSubmit"
+          onClick={goToSignUpDone}
+          disabled={!isInputValid}
+        >
+          회원 가입
+        </button>
       </div>
     </div>
   );

@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .login {
   margin: 0 auto;
   width: 100%;
@@ -42,7 +44,7 @@
     input {
       padding: 1em 0.8rem;
       width: 100%;
-      background: #fff;
+      background: $white;
       color: #737373;
       font-size: 0.8rem;
       box-sizing: border-box;
@@ -59,7 +61,7 @@
 
       &::placeholder {
         font-size: 0.8rem;
-        color: #999;
+        color: $grey60;
       }
     }
 
@@ -67,12 +69,16 @@
       padding: 1em 0;
       margin-bottom: 0.9rem;
       width: 100%;
-      background: #2d71f7;
-      color: #fff;
+      background: $blue;
+      color: $white;
       font-size: 0.9rem;
       font-weight: 500;
       border: none;
       border-radius: 8px;
+
+      &:hover {
+        background: $navy;
+      }
     }
 
     .btnWrap {
@@ -85,13 +91,13 @@
         width: 100%;
         white-space: nowrap;
         background: none;
-        color: #000;
+        color: $black;
         font-size: 0.7rem;
         font-weight: 300;
         border: none;
 
         &:first-child {
-          border-right: 1px solid #e0e0e0;
+          border-right: 1px solid $grey88;
         }
       }
     }

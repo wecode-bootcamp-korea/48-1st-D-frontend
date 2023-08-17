@@ -15,7 +15,7 @@
     margin-bottom: 1rem;
     padding: 0.7em 0;
     width: 100%;
-    color: #000;
+    color: $black;
 
     button {
       padding: 0 0 0 1.2rem;
@@ -64,7 +64,7 @@
 
         span {
           display: inline-block;
-          color: #ff3636;
+          color: $red;
           font-size: 0.6rem;
         }
       }
@@ -77,7 +77,7 @@
 
         &::placeholder {
           font-size: 0.8rem;
-          color: #999;
+          color: $grey60;
         }
       }
 
@@ -85,7 +85,7 @@
         padding: 0.4rem 0 0.4rem 1rem;
         position: relative;
         font-size: 0.6rem;
-        color: #ff3636;
+        color: $red;
 
         &::before {
           content: '';
@@ -112,6 +112,9 @@
       border: none;
       border-radius: 8px;
 
+      &:hover {
+        background: $navy;
+      }
       &:disabled {
         background-color: $grey80;
       }
