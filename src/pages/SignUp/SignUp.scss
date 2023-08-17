@@ -1,3 +1,5 @@
+@import '../../styles/variables.scss';
+
 .signUp {
   margin: 0 auto;
   padding: 0 1.2rem 2rem;
@@ -78,17 +80,41 @@
           color: #999;
         }
       }
+
+      .error {
+        padding: 0.4rem 0 0.4rem 1rem;
+        position: relative;
+        font-size: 0.6rem;
+        color: #ff3636;
+
+        &::before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          background: url(../../assets/images/ic_caption.png) no-repeat;
+          background-size: contain;
+          width: 0.8rem;
+          height: 0.8rem;
+        }
+      }
     }
+
     .btnSubmit {
       padding: 1em 0;
       margin-top: 2.3rem;
       width: 100%;
-      background: #2d71f7;
+      background-color: $blue;
       color: #fff;
       font-size: 0.9rem;
       font-weight: 500;
       border: none;
       border-radius: 8px;
+
+      &:disabled {
+        background-color: $grey80;
+      }
     }
   }
 }

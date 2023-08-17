@@ -8,10 +8,14 @@ const SignUpDone = () => {
     navigate('/');
   };
 
+  const goPrevPage = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="signUpDone">
       <div className="btnPrev">
-        <button onClick={goToLogin}>뒤로</button>
+        <button onClick={goPrevPage}>뒤로</button>
       </div>
       <div className="boxWrap">
         <p className="checkImage"></p>

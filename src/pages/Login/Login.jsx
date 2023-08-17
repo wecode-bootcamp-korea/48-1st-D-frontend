@@ -16,10 +16,7 @@ const Login = () => {
 
   const handleInput = event => {
     const { value, id } = event.target;
-    setUserInfo({
-      ...userInfo,
-      [id]: value,
-    });
+    setUserInfo(prev => ({ ...prev, [id]: value }));
   };
 
   useEffect(() => {}, [userInfo]);
@@ -58,7 +55,7 @@ const Login = () => {
       </div>
       <div className="inputBox">
         <input
-          type="text"
+          type="email"
           id="email"
           value={userInfo.email}
           onChange={handleInput}
