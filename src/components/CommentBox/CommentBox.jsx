@@ -39,7 +39,6 @@ const CommentBox = props => {
       userName: '',
     });
   };
-  console.log();
   const addToCommentData = () => {
     fetch('/data/data.json', {
       method: 'POST',
@@ -49,11 +48,25 @@ const CommentBox = props => {
           Authorization: localStorage.getItem('access_token'),
         },
       },
+      //TODO api 업데이트 후 적용
       body: JSON.stringify({
         comment: commentDataValue.inputComment,
         userName: commentDataValue.userName,
       }),
-    });
+    })
+      .then(res => {
+        if (res.ok) {
+          props.fetchPost();
+          return;
+        }
+        if (!res.ok) {
+          throw new Error('Error');
+        }
+      })
+
+      .catch(() => {
+        alert('댓글 달기에 실패하였습니다');
+      });
   };
 
   return (
