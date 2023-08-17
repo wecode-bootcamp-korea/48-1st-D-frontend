@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './CommentBox.scss';
 
 const commentDelete = () => {
+  alert('정말 삭제하시겠습니까?');
   fetch('/data/data.json', {
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
-      // Authorization: localStorage.getItem('access_token'),
+      Authorization: localStorage.getItem('access_token'),
     },
   }).then(res => {
     if (res.ok) {
@@ -33,7 +34,7 @@ const CommentBox = props => {
       userName: '',
     });
   };
-
+  console.log();
   const addToCommentData = () => {
     fetch('/data/data.json', {
       method: 'POST',

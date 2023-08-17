@@ -1,11 +1,11 @@
 import './PostContent.scss';
 
 const PostContent = props => {
-  const onSubscribe = () => {
-    props.setContentToggle(prev => !prev);
+  const onClickPostContent = () => {
+    props.onClickPostContent(props.postId);
   };
   return (
-    <div className="postContent" onClick={onSubscribe}>
+    <div className="postContent" onClick={onClickPostContent}>
       {props.content}
     </div>
   );

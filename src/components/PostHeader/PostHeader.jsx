@@ -5,8 +5,10 @@ const PostHeader = props => {
   const dateString = props.createdAt;
   const dateObject = new Date(dateString);
   const navigate = useNavigate();
+
+  //TODO https://reactrouter.com/en/main/hooks/use-params 참조
   const goToAddEditingPage = () => {
-    navigate('/post-editing');
+    navigate(`/post-editing/${props.postId}`);
   };
 
   const postDelete = () => {
@@ -18,7 +20,10 @@ const PostHeader = props => {
           Authorization: localStorage.getItem('access_token'),
         },
       },
+      // TODO api 업데이트 후 적용
       body: JSON.stringify({}),
+    }).then(() => {
+      props.fetchPost();
     });
   };
 

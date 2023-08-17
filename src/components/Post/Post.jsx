@@ -6,20 +6,19 @@ import CommentBox from '../../components/CommentBox/CommentBox';
 import './Post.scss';
 
 const Post = props => {
-  const [contentToggle, setContentToggle] = useState(false);
-
   return (
     <div className="post">
       <PostHeader
+        fetchPost={props.fetchPost}
         postId={props.postData.postId}
         userName={props.postData.userName}
         createdAt={props.postData.createdAt}
         isMyPost={props.postData.isMyPost}
       />
       <PostContent
+        postId={props.postData.postId}
         content={props.postData.content}
-        contentToggle={contentToggle}
-        setContentToggle={setContentToggle}
+        onClickPostContent={props.onClickPostContent}
       />
       <PostFooter
         isLiked={props.postData.isLiked}
@@ -27,9 +26,9 @@ const Post = props => {
         likeCount={props.postData.likeCount}
         commentCount={props.postData.comments}
       />
-      {contentToggle && (
+      {props.isFocused && (
         <CommentBox
-          userId={props.postData.usrId}
+          userName={props.postData.userName}
           comments={props.postData.comments}
           commentId={props.postData.comments.commentId}
           isMyReply={props.postData.comments.isMyReply}

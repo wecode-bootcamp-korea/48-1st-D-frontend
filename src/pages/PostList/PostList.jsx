@@ -6,9 +6,22 @@ import EditorButton from '../../components/EditorButton/EditorButton';
 import './PostList.scss';
 
 const PostList = () => {
-  const [postDataList, setPostDataList] = useState();
+  const [postDataList, setPostDataList] = useState([]);
+  const [focusedPostId, setFocusedPostId] = useState(null);
+
+  const onClickPostContent = postId => {
+    if (focusedPostId === postId) {
+      setFocusedPostId(null);
+    } else {
+      setFocusedPostId(postId);
+    }
+  };
 
   useEffect(() => {
+    fetchPost();
+  }, []);
+
+  const fetchPost = () =>
     fetch('/data/data.json', {
       method: 'GET',
       headers: {
@@ -26,14 +39,19 @@ const PostList = () => {
         });
         setPostDataList(sortedPosts);
       });
-  }, []);
 
   return (
     <div className="PostList">
       <div className="container">
         <article className="posts">
-          {postDataList?.map((postData, i) => (
-            <Post postData={postData} key={postData.postId}></Post>
+          {postDataList.map(postData => (
+            <Post
+              isFocused={focusedPostId === postData.postId}
+              onClickPostContent={onClickPostContent}
+              fetchPost={fetchPost}
+              postData={postData}
+              key={postData.postId}
+            ></Post>
           ))}
           <EditorButton />
         </article>
