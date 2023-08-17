@@ -17,7 +17,15 @@ const PostFooter = props => {
             },
             body: JSON.stringify({}),
           })
-        : fetch('/data/data.json', {
+        : /* 서버 응답 오류시 이전 UI로 변경 */
+          // .then(res => {
+          //   if (!res.ok) {
+          //     setLikeCount(prev => prev - 1);
+          //     setLike(prev);
+          //     return;
+          //   }
+          // })
+          fetch('/data/data.json', {
             method: 'DELETE',
             header: {
               'Content-Type': 'application/json;charset=utf-8',
@@ -25,8 +33,17 @@ const PostFooter = props => {
             },
             body: JSON.stringify({}),
           });
+      /* 서버 응답 오류시 이전 UI로 변경 */
+      // .then(res => {
+      //   if (!res.ok) {
+      //     setLikeCount(prev => prev + 1);
+      //     setLike(prev);
+      //     return;
+      //   }
+      // });
+
       {
-        !prev ? setLikeCount(likeCount + 1) : setLikeCount(likeCount - 1);
+        !prev ? setLikeCount(prev => prev + 1) : setLikeCount(prev => prev - 1);
       }
       return !prev;
     });
