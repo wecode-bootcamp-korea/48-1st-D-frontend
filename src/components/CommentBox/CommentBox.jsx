@@ -58,7 +58,7 @@ const CommentBox = props => {
           className="commentInput"
           placeholder="댓글을 작성해주세요."
           onChange={handleInput}
-        ></input>
+        />
         <button className="commentAddToListButton" onClick={addToCommentData}>
           댓글 게시
         </button>

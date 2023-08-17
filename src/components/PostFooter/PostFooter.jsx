@@ -1,9 +1,10 @@
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import HeartButton from '../HeartButton/HeartButton';
 import './PostFooter.scss';
 
 const PostFooter = props => {
   const [like, setLike] = useState(props.isLiked);
+  const [likeCount, setLikeCount] = useState(props.likeCount);
 
   const toggleLike = e => {
     setLike(prev => {
@@ -24,7 +25,9 @@ const PostFooter = props => {
             },
             body: JSON.stringify({}),
           });
-
+      {
+        !prev ? setLikeCount(likeCount + 1) : setLikeCount(likeCount - 1);
+      }
       return !prev;
     });
   };
@@ -33,7 +36,7 @@ const PostFooter = props => {
     <div className="postFooter">
       <div className="likeAndCommentWrap">
         <div className="likeText">좋아요</div>
-        <div className="likeCount">{props.likeCount}</div>
+        <div className="likeCount">{likeCount}</div>
         <div className="commentText">댓글</div>
         <div className="commentCount">{props.commentCount.length}</div>
       </div>
