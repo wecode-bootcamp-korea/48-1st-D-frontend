@@ -8,6 +8,8 @@ const SignUp = () => {
     password: '',
     passwordConfirm: '',
     nickName: '',
+    phoneNumber: '',
+    birthday: 'YYYY-MM-DD',
   });
 
   const [showEmailErrorMessage, setShowEmailErrorMessage] = useState(false);
@@ -16,6 +18,8 @@ const SignUp = () => {
   const [showPasswordConfirmErrorMessage, setShowPasswordConfirmErrorMessage] =
     useState(false);
   const [showNicknameErrorMessage, setShowNicknameErrorMessage] =
+    useState(false);
+  const [showPhoneNumberErrorMessage, setShowPhoneNumberErrorMessage] =
     useState(false);
   const navigate = useNavigate();
   const goPrevPage = () => {
@@ -61,6 +65,13 @@ const SignUp = () => {
         ? setShowNicknameErrorMessage(false)
         : setShowNicknameErrorMessage(true);
     }
+
+    if (id === 'phoneNumber') {
+      const isValidPhoneNumber = value.length == 11;
+      isValidPhoneNumber
+        ? setShowPhoneNumberErrorMessage(false)
+        : setShowPhoneNumberErrorMessage(true);
+    }
   };
 
   useEffect(() => {}, [
@@ -69,44 +80,50 @@ const SignUp = () => {
     showPasswordErrorMessage,
     showPasswordConfirmErrorMessage,
     showNicknameErrorMessage,
+    showPhoneNumberErrorMessage,
   ]);
 
   const isInputValid =
     showEmailErrorMessage == false &&
     showNicknameErrorMessage == false &&
     showPasswordErrorMessage == false &&
-    showPasswordConfirmErrorMessage == false;
-
-  const goToSignUpDone = () => {
-    if (isInputValid === true) {
-      navigate('/signup-done');
-    } else {
-      alert('실패');
-    }
-  };
+    showPasswordConfirmErrorMessage == false &&
+    userInfo.email.trim() !== '' &&
+    userInfo.password.trim() !== '' &&
+    userInfo.passwordConfirm.trim() !== '' &&
+    userInfo.nickName.trim() !== '' &&
+    userInfo.phoneNumber.trim() !== '';
 
   // const goToSignUpDone = () => {
-  //   fetch('API', {
-  //     method: 'POST',
-  //     headers: {
-  //       'Content-type': 'application/json',
-  //     },
-  //     body: JSON.stringify({
-  //       email: userInfo.email,
-  //       password: userInfo.password,
-  //       passwordConfirm: userInfo.passwordConfirm,
-  //       nickName: userInfo.nickName,
-  //     }),
-  //   })
-  //     .then(response => response.json())
-  //     .then(result => {
-  //       if (result.message === 'SUCCESS') {
-  //         navigate('/signup-done');
-  //       } else {
-  //         alert('실패');
-  //       }
-  //     });
+  //   if (isInputValid === true) {
+  //     navigate('/signup-done');
+  //   } else {
+  //     alert('실패');
+  //   }
   // };
+
+  const goToSignUpDone = () => {
+    fetch('http://10.58.52.111:3000/user/signup', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: userInfo.email,
+        password: userInfo.password,
+        passwordConfirm: userInfo.passwordConfirm,
+        nickName: userInfo.nickName,
+      }),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.message === 'SUCCESS') {
+          navigate('/signup-done');
+        } else {
+          alert('실패');
+        }
+      });
+  };
 
   return (
     <div className="signUp">
@@ -166,44 +183,33 @@ const SignUp = () => {
             <span className="error">2자 이상 6자 이하여야 합니다</span>
           )}
         </div>
-        {/* <div className="inputBox">
-          <p>전화번호</p>
-          <span>선택사항</span>
-          <select>
-            <option key="" value="">
-              010
-            </option>
-            <option key="" value="">
-              016
-            </option>
-            <option key="" value="">
-              017
-            </option>
-            <option key="" value="">
-              018
-            </option>
-            <option key="" value="">
-              070
-            </option>
-          </select>
+        <div className="inputBox">
+          <div className="title">
+            <p>전화번호</p>
+            <span>선택사항</span>
+          </div>
           <input
-            type="text"
-            id="userName"
-            //onChange={}
+            type="tel"
+            id="phoneNumber"
+            onChange={handleInput}
             placeholder="휴대폰 번호를 입력해주세요."
           />
+          {showPhoneNumberErrorMessage && (
+            <span className="error">핸드폰 번호를 확인해주세요</span>
+          )}
         </div>
         <div className="inputBox">
-          <p>생일</p>
-          <span>선택사항</span>
+          <div className="title">
+            <p>생일</p>
+            <span>선택사항</span>
+          </div>
           <input
-            type="text"
-            id="userName"
-            //onChange={}
-            placeholder="닉네임"
+            type="date"
+            id="birthday"
+            onChange={handleInput}
+            placeholder="생년월일을 입력해주세요."
           />
-        </div> */}
-
+        </div>{' '}
         <button
           className="btnSubmit"
           onClick={goToSignUpDone}

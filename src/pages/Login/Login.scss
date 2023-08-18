@@ -41,27 +41,31 @@
     width: 100%;
     box-sizing: border-box;
 
-    input {
-      padding: 1em 0.8rem;
+    .form {
       width: 100%;
-      background: $white;
-      color: #737373;
-      font-size: 0.8rem;
-      box-sizing: border-box;
-      border: 1px solid #dbdbdb;
-      border-radius: 0.2rem;
 
-      &:first-of-type {
-        margin-bottom: 0.4rem;
-      }
-
-      &:last-of-type {
-        margin-bottom: 0.8rem;
-      }
-
-      &::placeholder {
+      input {
+        padding: 1em 0.8rem;
+        width: 100%;
+        background: $white;
+        color: #737373;
         font-size: 0.8rem;
-        color: $grey60;
+        box-sizing: border-box;
+        border: 1px solid #dbdbdb;
+        border-radius: 0.2rem;
+
+        &:first-of-type {
+          margin-bottom: 0.4rem;
+        }
+
+        &:last-of-type {
+          margin-bottom: 0.8rem;
+        }
+
+        &::placeholder {
+          font-size: 0.8rem;
+          color: $grey60;
+        }
       }
     }
 
@@ -78,6 +82,10 @@
 
       &:hover {
         background: $navy;
+      }
+
+      &:disabled {
+        background-color: $grey80;
       }
     }
 
